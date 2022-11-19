@@ -421,7 +421,7 @@ local OnMessageEvent =
 						end
 					end
 					if table.find(Admins, player) then
-						if message:match("give points") then
+						if message:match("add points") then
 							Split = string.split(message, " ")
 							PlayerName = Split[3]
 							Amount = tonumber(Split[4])
