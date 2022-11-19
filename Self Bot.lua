@@ -589,9 +589,9 @@ spawn(
 )
 
 while task.wait() do
-    Message1 = "Control my character for me!\nSay 'controls' to see all controls."
-    Message2 = ""
-    for v in Message1:gmatch "." do
+    Message1 = 'Control my character for me!\nSay "controls" to see all controls.'
+    Message2 = ''
+    for v in Message1:gmatch '.' do
         Message2 = Message2 .. v
         if NotShowingControls then
             UpdateBooth(Message2)
