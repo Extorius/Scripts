@@ -122,7 +122,7 @@ end
 game:GetService("Players").PlayerAdded:Connect(
     function(player)
         if not isfile("Self Bot RMA/saved_points/"..tostring(player)..".txt") then
-			if ReturnAdmin(player) then
+			if ReturnAdmin(tostring(player)) then
 				writefile("Self Bot RMA/saved_points/"..tostring(player)..".txt", game:GetService("HttpService"):JSONEncode(100000))
 			else
 				writefile("Self Bot RMA/saved_points/"..tostring(player)..".txt", game:GetService("HttpService"):JSONEncode(50))
