@@ -70,10 +70,6 @@ local function ReturnAdmin(player)
 end
 
 local function BlacklistPlayer(player)
-	if isfile("Self Bot RMA/saved_admins/"..tostring(player)..".txt") then
-		delfile("Self Bot RMA/saved_admins/"..tostring(player)..".txt")
-	end
-	
 	writefile("Self Bot RMA/saved_blacklists/"..tostring(player)..".txt", "This player is blacklisted.")
 end
 local function UnblacklistPlayer(player)
@@ -263,7 +259,7 @@ local OnMessageEvent =
                 local originalmsg = message
                 local message = string.lower(message)
                 
-				if not ReturnBlacklist(player) then
+				if not ReturnBlacklist(player) or Player == LocalPlayer then
 					if message == "forward" or message == "forwards" then
 						if PointsSystem(message, Player) == true then
 							game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
